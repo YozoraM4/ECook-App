@@ -1,14 +1,12 @@
-import React from 'react'
-import { NavigationContainer } from '@react-navigation/native'
+import React,{ useEffect } from 'react'
 
 // Stacks
 import TabNavigator from './tabNvigator/TabNavigator'
 
 const Navigator = () => {
+
   return (
-    <NavigationContainer>
         <TabNavigator />
-    </NavigationContainer>
   )
 }
 

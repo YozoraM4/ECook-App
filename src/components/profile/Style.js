@@ -8,11 +8,24 @@ const styles = StyleSheet.create ({
     container: {
         flex: 1,
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        backgroundColor: '#fff'
     },
-    title: {
-        fontSize: hp(3),
-        fontWeight: "bold"
+    componentContainer: {
+        width: wp(100),
+        height: '100%',
+    },
+    avatarContainer: {
+        justifyContent: "center",
+        alignItems: "center",
+        marginVertical: hp(3)
+    },
+    avatar: {
+        width: hp(20),
+        height: hp(20),
+        backgroundColor: '#f15044',
+        borderRadius: hp(50),
+        resizeMode: "contain"
     }
 })
 
