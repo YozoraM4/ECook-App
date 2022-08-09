@@ -5,7 +5,8 @@ const Logo = (props) => (
   <Svg
     width={props.width}
     height={props.height}
-    viewBox="0 0 375 375"
+    // viewBox="165 0 700 375"
+    viewBox= '49 80 130 220'
   >
     <Defs>
       <ClipPath id="a">

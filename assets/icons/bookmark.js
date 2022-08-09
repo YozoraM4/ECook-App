@@ -1,17 +1,16 @@
 import * as React from "react"
-import Svg, { Path } from "react-native-svg"
+import Svg, { G, Path } from "react-native-svg"
 
 const BookMarkIcon = (props) => (
-    <Svg
-        viewBox="0 0 24 24"
-        width={props.width}
-        height={props.height}
-        fill={props.colors}
-    >
-        <Path
-        d="M18 21a1 1 0 0 1-.491-.13l-5.673-3.207-5.323 3.2A1 1 0 0 1 5 20V5.334A2.272 2.272 0 0 1 7.2 3h9.6A2.273 2.273 0 0 1 19 5.334V20a1 1 0 0 1-1 1Zm-6.18-5.494a1 1 0 0 1 .493.129L17 18.286V5.334c0-.2-.12-.334-.2-.334H7.2c-.08 0-.2.133-.2.334v12.9l4.306-2.586a1 1 0 0 1 .515-.142Z"
-        fill={props.colors}
-        />
+    <Svg width={props.width} height={props.height} viewBox='-5 -1 24 20'>
+        <G fill="none" fillRule="evenodd">
+            <Path d="M-5-3h24v24H-5z" />
+            <Path fill={props.fill} d="m2 14.97 5-2.15 5 2.15V2H2z" />
+            <Path
+                d="M12 0H2C.9 0 0 .9 0 2v16l7-3 7 3V2c0-1.1-.9-2-2-2Zm0 14.97-5-2.14-5 2.14V2h10v12.97Z"
+                fill={props.colors}
+            />
+        </G>
     </Svg>
 )
 

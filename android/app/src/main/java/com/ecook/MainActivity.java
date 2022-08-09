@@ -1,5 +1,7 @@
 package com.ecook;
 
+import android.os.Bundle;
+import org.devio.rn.splashscreen.SplashScreen;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
@@ -15,6 +17,12 @@ public class MainActivity extends ReactActivity {
     return "ECook";
   }
 
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    SplashScreen.show(this); // here
+    super.onCreate(savedInstanceState);
+  }
+
   /**
    * Returns the instance of the {@link ReactActivityDelegate}. There the RootView is created and
    * you can specify the renderer you wish to use - the new renderer (Fabric) or the old renderer
@@ -26,7 +34,10 @@ public class MainActivity extends ReactActivity {
   }
 
   public static class MainActivityDelegate extends ReactActivityDelegate {
-    public MainActivityDelegate(ReactActivity activity, String mainComponentName) {
+     public MainActivityDelegate(
+      ReactActivity activity,
+      String mainComponentName
+    ) {
       super(activity, mainComponentName);
     }
 

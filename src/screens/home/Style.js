@@ -18,6 +18,7 @@ const styles = StyleSheet.create ({
         width: wp(100),
         flexDirection: "row",
         justifyContent: "space-between",
+        paddingVertical: hp(1)
     },
     actionBtn: {
         borderRadius: hp(50),
@@ -32,15 +33,22 @@ const styles = StyleSheet.create ({
         height: hp(50),
         position: "absolute",
     },
+    scrollView: {
+        marginTop: hp(1),
+        borderTopLeftRadius: hp(5),
+        borderTopRightRadius: hp(5),
+        zIndex: 5,
+    },
     description: {
         width: wp(100),
         height: '100%',
         backgroundColor: '#fff',
         borderTopLeftRadius: hp(5),
         borderTopRightRadius: hp(5),
-        marginTop: hp(35),
+        marginTop: hp(25),
+        overflow: "hidden",
         padding: hp(3),
-        zIndex: 5,
+        zIndex: 4,
     },
     header: {
         flexDirection: "row",
@@ -48,14 +56,18 @@ const styles = StyleSheet.create ({
     },
     headTitle: {
         fontSize: hp(3),
-        fontWeight: '700',
+        fontWeight: 'bold',
     },
     subTitle: {
         fontWeight: '500'
     },
+    flexRow: {
+        flexDirection: "row",
+    },
     rowBetween: {
         flexDirection: "row",
         justifyContent: "space-between",
+        alignItems: "center"
     },
     ingredientsBox: {
         paddingBottom: hp(2)

@@ -1,5 +1,5 @@
 import React,{ useState, useEffect } from 'react'
-import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -8,8 +8,12 @@ import {
 // Style
 import styles from '@components/home/Style';
 
+// Icons
+import Close from '@assets/icons/close';
+
 // Components
 import Component from '@components/home/Component';
+import CreateModal from '../../modal/CreateModal';
 
 // Data
 import foods from '@data/food';
@@ -24,6 +28,9 @@ const Home = ({navigation}) => {
   //     setapiData(res)
   //   })
   // },[])
+  const ModalHandler = () => {
+    navigation.navigate('Modal')
+  }
 
   const detailHandler = value => {
     navigation.navigate('Detail', {food: value});
@@ -33,8 +40,13 @@ const Home = ({navigation}) => {
     <View style={styles.container}>
       <Component 
         data={foods}
+        goProfile={()=> {navigation.navigate('Profile')}}
         goToDetail={detailHandler}
       />
+      <TouchableOpacity onPress={ModalHandler} style={styles.addBtn}>
+        <Close width={wp(5)} height={hp(5)} colors='#f6846b' />
+      </TouchableOpacity>
+
     </View>
   )
 }
