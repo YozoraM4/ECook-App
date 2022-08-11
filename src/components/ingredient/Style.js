@@ -36,8 +36,9 @@ const styles = StyleSheet.create ({
         color: '#fd7463'
     },
     headline: {
+        fontFamily: 'BreeSerif-Regular',
         fontSize: hp(2.5),
-        fontWeight: '700',
+        fontWeight: '500',
     },
     listBox: {
         marginTop: hp(3),
@@ -54,6 +55,7 @@ const styles = StyleSheet.create ({
         paddingLeft: hp(2)
     },
     name: {
+        fontFamily: 'BreeSerif-Regular',
         fontSize: hp(2),
         fontWeight: '500',
     },

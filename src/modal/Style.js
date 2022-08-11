@@ -36,6 +36,7 @@ const styles = StyleSheet.create ({
         borderRadius: hp(1)
     },
     header: {
+        fontFamily: 'BreeSerif-Regular',
         paddingBottom: hp(3),
         fontSize: hp(3),
         fontWeight: '500',
@@ -46,11 +47,13 @@ const styles = StyleSheet.create ({
         alignItems: "center"
     },
     title: {
+        fontFamily: 'BreeSerif-Regular',
         fontSize: hp(2),
         fontWeight: '400',
         marginVertical: hp(1),
     },
     input: {
+        fontFamily: 'BreeSerif-Regular',
         paddingHorizontal: hp(1.5),
         backgroundColor: '#f8f7f7',
         borderRadius: hp(1),

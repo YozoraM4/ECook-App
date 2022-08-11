@@ -34,7 +34,8 @@ const styles = StyleSheet.create ({
         position: "absolute",
     },
     scrollView: {
-        marginTop: hp(1),
+        flex: 1,
+        marginTop: hp(10),
         borderTopLeftRadius: hp(5),
         borderTopRightRadius: hp(5),
         zIndex: 5,
@@ -55,10 +56,14 @@ const styles = StyleSheet.create ({
         justifyContent: "space-between",
     },
     headTitle: {
+        width: wp(73),
+        fontFamily: 'BreeSerif-Regular',
         fontSize: hp(3),
-        fontWeight: 'bold',
+        fontWeight: '500',
     },
     subTitle: {
+        width: wp(73),
+        fontFamily: 'BreeSerif-Regular',
         fontWeight: '500'
     },
     flexRow: {
@@ -76,8 +81,9 @@ const styles = StyleSheet.create ({
         color: '#f6846b'
     },
     textIngredients: {
+        fontFamily: 'BreeSerif-Regular',
         fontSize: hp(2),
-        fontWeight: '700',
+        fontWeight: '500',
     },
     itemBox: {
         paddingVertical: hp(1),

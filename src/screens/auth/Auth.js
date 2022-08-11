@@ -71,7 +71,7 @@ const Login = ({navigation}) => {
     <View style={styles.container}>
       <View style={styles.langBox}>
         <TouchableOpacity onPress={showLanguageModal}>
-          <Text style={styles.textWhite}>Language {lang}</Text>
+          <Text style={[styles.textWhite, {fontFamily: 'BreeSerif-Regular'}]}>Language {lang}</Text>
         </TouchableOpacity>
       </View>
 

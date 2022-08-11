@@ -17,7 +17,7 @@ const First = (props) => {
         <View style={styles.headBox}>
             <Text style={styles.headline}><Text style={styles.textPink}>Easy</Text> To Use</Text>
             <Text style={styles.subline}>At Recipes, There alot of recipes all over the world.</Text>
-            <Text style={styles.subline}>You can also create new recipes for others.</Text>
+            <Text style={styles.subline}>You can saved recipes easy to find.</Text>
         </View>
         <View>
             <EasyToUse 

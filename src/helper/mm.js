@@ -3,6 +3,6 @@ export default {
     header1: 'ချက်ချင်ပါသလဲ?',
 
     // Profile
-    CRecipes: 'မိမိ၏ချက်နည်းများ',
+    LRecipes: 'နှစ်သက်သောချက်နည်းများ',
     SRecipes: 'သိမ်းထားသောချက်နည်းများ'
   };

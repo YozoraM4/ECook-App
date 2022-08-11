@@ -5,13 +5,12 @@ import {getFocusedRouteNameFromRoute} from '@react-navigation/native';
 // Screens
 import HomeScreen from '@screens/home/Home'
 import DetailScreen from '../../screens/home/Detail'
-import ModalScreen from '../../modal/CreateModal'
 
 const Stack = createNativeStackNavigator();
 
 const HomeStack = ({navigation, route}) => {
   useLayoutEffect(() => {
-    let hideRouteName = ['Detail', 'Modal'];
+    let hideRouteName = ['Detail', 'Edit'];
     let routeName = getFocusedRouteNameFromRoute(route);
     if (
       hideRouteName.includes(routeName == undefined ? 'HomeStack' : routeName)
@@ -30,7 +29,6 @@ const HomeStack = ({navigation, route}) => {
             options={{headerShown: false}}
         />
         <Stack.Screen name='Detail' component={DetailScreen} options={{headerShown: false}}/>
-        <Stack.Screen name='Modal' component={ModalScreen} options={{headerShown: false}}/>
     </Stack.Navigator>
   )
 }

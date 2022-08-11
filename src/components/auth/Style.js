@@ -40,8 +40,9 @@ const styles = StyleSheet.create ({
         marginTop: hp(10)
     },
     login: {
+        fontFamily: 'BreeSerif-Regular',
         fontSize: hp(5),
-        fontWeight: '900',
+        fontWeight: '500',
         color: '#fd7463',
         paddingBottom: hp(3)
     },
@@ -72,6 +73,7 @@ const styles = StyleSheet.create ({
         borderRadius: hp(1)
     },
     text: {
+        fontFamily: 'BreeSerif-Regular',
         fontSize: hp(2),
         fontWeight: '500',
     },

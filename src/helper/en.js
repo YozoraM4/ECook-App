@@ -3,6 +3,6 @@ export default {
     header1: 'to cook today?',
 
     // Profile
-    CRecipes: 'Created Recipes',
+    LRecipes: 'Liked Recipes',
     SRecipes: 'Saved Recipes'
   };

@@ -23,6 +23,7 @@ const LoginComponent = (props) => {
               value={props.nameValue}
               onChangeText={props.onChangeName}
               placeholder='Name .....'
+              style={{fontFamily: 'BreeSerif-Regular'}}
             />
           </View>
           <View style={[styles.input, styles.shadow]}>
@@ -31,6 +32,7 @@ const LoginComponent = (props) => {
               onChangeText={props.onChangePassword}
               placeholder='Password .....'
               secureTextEntry={true}
+              style={{fontFamily: 'BreeSerif-Regular'}}
             />
           </View>
           <TouchableOpacity onPress={()=> props.loginAction()} style={[styles.loginBtn, styles.shadow]}>
@@ -39,7 +41,7 @@ const LoginComponent = (props) => {
         </View>
       </View>
       <View style={styles.footer}>
-        <Text style={styles.textWhite}>If your don't have an account </Text>
+        <Text style={[styles.textWhite, {fontFamily: 'BreeSerif-Regular'}]}>If your don't have an account </Text>
         <TouchableOpacity onPress={()=> props.goRedister()} style={styles.footerBtn}>
           <Text style={[styles.text, styles.textWhite]}>register !</Text>
         </TouchableOpacity>

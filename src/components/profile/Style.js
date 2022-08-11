@@ -58,43 +58,45 @@ const styles = StyleSheet.create ({
         height: hp(30),
         alignItems: "center",
         justifyContent: "center",
-        marginTop: hp(-5),
-        paddingTop: hp(5),
-        paddingBottom: hp(5),
     },
     avatar: {
         width: hp(20),
         height: hp(20),
+        backgroundColor: '#fd7463',
         borderWidth: hp(0.3),
-        borderColor: '#fff',
+        borderColor: '#d5d5d5',
         borderRadius: hp(50),
-        resizeMode: "contain",
+        resizeMode: "cover",
         position: "absolute",
         top: hp(5),
         zIndex: -1
     },
     userInfo: {
         width: wp(100),
-        height: hp(100),
-        paddingTop: hp(2),
+        height: '100%',
+        marginTop: hp(-18),
+        paddingTop: hp(18),
         alignItems: "center",
         backgroundColor: '#fff',
         borderTopLeftRadius: hp(5),
-        borderTopRightRadius: hp(5)
+        borderTopRightRadius: hp(5),
     },
     options: {
+        fontFamily: 'BreeSerif-Regular',
         paddingHorizontal: hp(3),
         paddingVertical: hp(3),
         fontSize: hp(2),
-        fontWeight: '700',
+        fontWeight: '500',
     },
     actionText: {
         paddingHorizontal: hp(1),
+        color: '#757575'
     },
     userName: {
-        fontSize: hp(2.5),
-        fontWeight: '700',
-        paddingBottom: hp(1)
+        fontFamily: 'BreeSerif-Regular',
+        fontSize: hp(3),
+        fontWeight: '500',
+        paddingBottom: hp(3),
     },
     sectionBox: {
         paddingHorizontal: hp(5),
@@ -113,7 +115,19 @@ const styles = StyleSheet.create ({
         shadowColor: '#757575',
         shadowOpacity: hp(0.5),
         elevation: 1,
-      }
+    },
+    confirmBtn: {
+        backgroundColor: '#f6846b',
+        paddingHorizontal: hp(8),
+        paddingVertical: hp(1.5),
+        borderRadius: hp(1),
+        marginTop: hp(10)
+    },
+    input: {
+        fontFamily: 'BreeSerif-Regular', 
+        fontSize: hp(2.5), 
+        width: wp(80)
+    }
 })
 
 export default styles

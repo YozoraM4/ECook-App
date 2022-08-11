@@ -49,6 +49,8 @@ const Navigator = () => {
       const token = AppStorage.getItem('@user.token');
       const userData = AppStorage.getItem('@user.data');
 
+      setUserInfo(JSON.parse(userData))
+
       if (intostate) {
         setIntro(false)
       } else {

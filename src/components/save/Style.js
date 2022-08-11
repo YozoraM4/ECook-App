@@ -6,10 +6,9 @@ import {
   
 const styles = StyleSheet.create ({
     container: {
-        width: wp(100),
-        height: hp(95),
+        flex: 1,
         alignItems: "center",
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     componentContainer: {
         width: '100%',
@@ -37,17 +36,18 @@ const styles = StyleSheet.create ({
         color: '#fd7463'
     },
     headline: {
+        fontFamily: 'BreeSerif-Regular',
         fontSize: hp(2.5),
-        fontWeight: '700',
+        fontWeight: '500',
     },
     card: {
-        width: wp(46),
-        height: hp(40),
+        width: wp(48),
+        height: hp(30),
         backgroundColor: '#f6846b',
         flexDirection: "column",
         justifyContent: "space-between",
         marginVertical: hp(1),
-        marginHorizontal: hp(1),
+        marginHorizontal: hp(0.5),
         position: "relative",
         borderRadius: hp(2),
         overflow: "hidden"
@@ -58,13 +58,15 @@ const styles = StyleSheet.create ({
         marginBottom: hp(2),
     },
     foodName: {
+        fontFamily: 'BreeSerif-Regular',
         color: '#fff',
-        fontSize: hp(2.5),
-        fontWeight: '700',
+        fontSize: hp(2),
+        fontWeight: '500',
     },
     duration: {
+        fontFamily: 'BreeSerif-Regular',
         color: '#fff',
-        fontSize: hp(1.5),
+        fontSize: hp(2),
         fontWeight: '400',
         paddingHorizontal: hp(0.5),
     },
@@ -75,6 +77,7 @@ const styles = StyleSheet.create ({
     },
     nameBox: {
         width: '100%',
+        backgroundColor: 'rgba(0,0,0, 0.3)',
         position: "absolute",
         bottom: hp(0),
         paddingHorizontal: hp(2),
@@ -92,8 +95,9 @@ const styles = StyleSheet.create ({
         zIndex: 10,
     },
     removeBtn: {
-        backgroundColor: 'rgba(255, 255, 255, 0.8)',
-        borderRadius: hp(5),
+        // backgroundColor: 'rgba(0,0,0, 0.3)',
+        backgroundColor: 'rgba(255, 255, 255, 0.6)',
+        borderRadius: hp(1),
         padding: hp(1)
     }
 })

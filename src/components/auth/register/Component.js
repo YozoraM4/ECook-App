@@ -20,6 +20,7 @@ const RegisterComponent = (props) => {
               value={props.nameValue}
               onChangeText={props.onChangeName}
               placeholder='Name .....'
+              style={{fontFamily: 'BreeSerif-Regular'}}
             />
           </View>
           <View style={[styles.input, styles.shadow]}>
@@ -28,6 +29,7 @@ const RegisterComponent = (props) => {
               onChangeText={props.onChangePassword}
               placeholder='Password .....'
               secureTextEntry={true}
+              style={{fontFamily: 'BreeSerif-Regular'}}
             />
           </View>
           <TouchableOpacity onPress={()=> props.registerAction()} style={[styles.loginBtn, styles.shadow]}>
@@ -36,7 +38,7 @@ const RegisterComponent = (props) => {
         </View>
       </View>
       <View style={styles.footer}>
-        <Text style={styles.textWhite}>If your already have an account </Text>
+        <Text style={[styles.textWhite, {fontFamily: 'BreeSerif-Regular'}]}>If your already have an account </Text>
         <TouchableOpacity onPress={()=> props.goLogin()} style={styles.footerBtn}>
           <Text style={[styles.text, styles.textWhite]}>Login !</Text>
         </TouchableOpacity>

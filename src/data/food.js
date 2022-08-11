@@ -80,7 +80,7 @@ export default foods = [
       "name": 'Salmon With Couscous',
       "image": 'https://cdn.shopify.com/s/files/1/0592/9130/4128/articles/Fred_s_Big_Cod_Fillets_with_Mediterranean_veg_and_giant_couscous-min-min_1200x1200.png?v=1631012543',
       "duration": '25 min',
-      "style": 'Classic japanese recipe',
+      "style": 'European recipe',
       "serve": '1',
       "like": '346' ,
       "ingredients": [
@@ -98,6 +98,112 @@ export default foods = [
         "To make the couscous, heat the oil in a pan. Add the onion and cook for 10 minutes over a low heat. Stir in the garlic and cook for another minute. Add the couscous, pour over the stock and stir.",
         "Cover with a lid. Remove from the heat and leave for 5-7 minutes until all the liquid has been absorbed and the couscous has fluffed up. Stir through the lemon zest, juice, almonds and coriander with a fork, gently breaking apart any clumps of couscous.",
         "Meanwhile, prepare the fish. Preheat the oven to Gas Mark 6, 200°C, fan 180°C. Mix the olive oil, lemon zest, Moroccan spice mix and honey, then spread over the salmon. Season well and place on a baking sheet. Cook for 12-15 minutes until just cooked through. Serve with the couscous.",
+      ]
+    },
+    {
+      "id": 5,
+      "name": 'Scrambled Tofu',
+      "image": 'https://www.thefullhelping.com/wp-content/uploads/2010/08/Classic-tofu-scramble-2-1-500x500.jpg',
+      "duration": '15 min',
+      "style": 'Chinese recipe',
+      "serve": '2',
+      "like": '875' ,
+      "ingredients": [
+        'Tofu',
+        "Bell Pepper",
+        "Onion",
+        "Olive Oil",
+        "Garlic",
+        "seasoning"
+      ],
+      "instructions": [
+        "Olace your chopped onion, bell pepper and garlic in a frying pan with about 1 teaspoon of olive oil and saute it on the stove on medium heat.",
+        "Remove from heat when your onions are beginning to change color.",
+        "In a bowl crumble your tofu and mix in your seasonings, if you like tofu cubed rather than crunbled you could totally do that for this recipe as well.",
+        "Pour 1 teaspoon of olive oil on the bottom of a frying pan and place on your stove on medium heat, dump your tofu on top of your olive oil and give it a little stir.",
+        "When your tofu begin to get firm around the edges, your can call it done.",
+        "Gently fold your onion, pepper mixture into your tofu.",
+        "Serve hot, and enjoy!"
+      ]
+    },
+    {
+      "id": 6,
+      "name": 'Cannellini Tuna Salad',
+      "image": 'https://cookingontheweekends.com/wp-content/uploads/2012/01/Cannellini-Bean-Tuna-Salad6.jpg',
+      "duration": '6 min',
+      "style": 'Cannellini Salad',
+      "serve": '1',
+      "like": '232' ,
+      "ingredients": [
+        "Capers",
+        "Tuna",
+        "Salt",
+        "Pepper",
+        "Cheery Tomato",
+        "Lemon Juice",
+        "Olive Oil",
+        "Parsley",
+        "Spinach"
+      ],
+      "instructions": [
+        "In a medium bowl, mix cannellini beans, tuna and capers.",
+        "Drizzle with olive oil and lemon juice.",
+        "Gently fold in cheery tomatoes and half of the parsley.",
+        "Season with kosher salt and black peer to taste.",
+        "Serve immediately on bed on spinach.",
+        "Garnish with remaining parsley (Can be served cold, just refrigerate tuna salad and place on spinach when ready to serve)",      ]
+    },
+    {
+      "id": 7,
+      "name": 'Roasted Garlic Potatoes',
+      "image": 'https://www.verywellfit.com/thmb/C7-PUjmnl0lbDhJNfBVvWT0MrwU=/1885x1414/smart/filters:no_upscale()/GettyImages-1319392717-53d401562da64d38bcfeb368ff3dc8db.jpg',
+      "duration": '50 min',
+      "style": 'fry potato',
+      "serve": '2',
+      "like": '953' ,
+      "ingredients": [
+        "garlic",
+        "potato",
+        "salt",
+        "water",
+        "pepper",
+        "olive oil",
+        "parsley",
+      ],
+      "instructions": [
+        "Preheat oven to 400 F.",
+        "Put the garlic and salt in a mortar and pestle and crush the garlic until it becomes a paste.",
+        "Add the oil, parsley and water to the garlic and mix well. Set aside.",
+        "Cut up the potatoes into wedges.",
+        "In a baking dish add the potatoes, season with salt and pepper and toss them in the olive oil.",
+        "Cover with aluminum foil and bake for 30 minutes covered.",
+        "After 30 minutes remove the aluminum foil and bake for another 10 minute until they turn crispy and golden brown.",
+        "Pour garlic sauve over the hot potatoes and serve."
+      ]
+    },
+    {
+      "id": 8,
+      "name": 'Butternut Squash Soup',
+      "image": 'https://www.warrennash.co.uk/recipes/spicybutternutsquashsoup/spicybutternutsquashsouprecipe_xl.jpg',
+      "duration": '35 min',
+      "style": 'traditional soup recipe',
+      "serve": '4',
+      "like": '452' ,
+      "ingredients": [
+        "Squash",
+        "Begetable Broth",
+        "Curry Powder",
+      ],
+      "instructions": [
+        "Slice butternut in half.",
+        "Place cut-side-down on a cookie sheet and bake at 350F for 20 to 45 minutes, until the squash can be pireced easily with a fork buth be careful not to burn.",
+        "In the skin starts turning brown, it's done. Set aside to cool until it is safe to handle.",
+        "Scoop out seeds and stringy matter and discard.",
+        "Then scoop out flesh and transfer to a blender.",
+        "Add vegetable broth, starting with 1/2 cup, adding more as necessary until the soup becomes thick and silky but totally pureed.",
+        "Add curry powder to taste.",
+        "Gently reheat on the stove over low heat, adding salt to taste if desired.",
+        "You can also add cayenne or hot sauce for a spicer curry flavouring."
       ]
     },
   ]

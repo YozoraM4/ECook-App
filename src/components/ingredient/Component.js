@@ -45,7 +45,7 @@ const Component = (props) => {
         {temp.length > 0 ?
           <>
             <View style={styles.flexRow}>
-              <Text style={[styles.textPink, {fontSize: hp(2.5), fontWeight: '800', padding: hp(2)}]}>Total Ingredients : {temp.length}</Text>
+              <Text style={[styles.textPink, {fontSize: hp(2.5), fontFamily: 'BreeSerif-Regular', fontWeight: '200', padding: hp(2)}]}>Total Ingredients : {temp.length}</Text>
             </View>
             <ScrollView style={{paddingHorizontal: hp(2)}} showsVerticalScrollIndicator={false}>
                 <FlatList  
@@ -60,7 +60,7 @@ const Component = (props) => {
           :
           <View style={styles.flex}>
             <BasketIcon width={wp(30)} height={hp(20)} colors='#d5d5d5' />
-            <Text style={{color: '#d5d5d5', fontSize: hp(3), fontWeight: 'bold'}}>No Ingredients!</Text>
+            <Text style={{color: '#d5d5d5', fontFamily: 'BreeSerif-Regular', fontSize: hp(3), fontWeight: '500'}}>No Ingredients!</Text>
           </View>
         }
     </View>

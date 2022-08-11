@@ -1,0 +1,25 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/BreeSerif-Regular.ttf",
+      "sha1": "f19ca8ca7c6f79883f331cf66f4a7d4bc5651a42"
+    },
+    {
+      "path": "assets/fonts/OleoScriptSwashCaps-Bold.ttf",
+      "sha1": "7f15c1fee090213f831b0a81c7f2a9ee242806fa"
+    },
+    {
+      "path": "assets/fonts/OleoScriptSwashCaps-Regular.ttf",
+      "sha1": "1f67c63319cab7256ddcff472c3d82302bfaae2d"
+    },
+    {
+      "path": "assets/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf",
+      "sha1": "a0c167b7600982961c56467c8dfe0bd6dd787743"
+    },
+    {
+      "path": "assets/fonts/PlayfairDisplay-VariableFont_wght.ttf",
+      "sha1": "498c73c1c9ba334f4764af03435adc02ef3c5100"
+    }
+  ]
+}

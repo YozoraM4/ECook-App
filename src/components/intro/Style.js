@@ -27,12 +27,14 @@ const styles = StyleSheet.create ({
         paddingHorizontal: hp(3),
     },
     headline: {
+        fontFamily: 'BreeSerif-Regular',
         fontSize: hp(5),
-        fontWeight: "900",
+        fontWeight: "500",
     },
     subline: {
+        fontFamily: 'BreeSerif-Regular',
         fontSize: hp(2),
-        fontWeight: '500',
+        fontWeight: '300',
     },
     nextBtn: {
         backgroundColor: '#fd7463',

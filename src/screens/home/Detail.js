@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import { ScrollView } from 'react-native-virtualized-view';
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -19,6 +19,7 @@ import Sakura from '@assets/icons/sakura';
 
 // Components
 import * as actionSave from '../../store/actions/save';
+import * as actionLike from '../../store/actions/like';
 
 const Detail = ({route, navigation}) => {
   const [isSave, setIsSave] = useState(false);
@@ -26,14 +27,14 @@ const Detail = ({route, navigation}) => {
   const {food} = route.params;
 
   const dispatch = useDispatch();
-
-    const save = (value) => {
-      dispatch(actionSave.add(value));
-      setIsSave(!isSave);
-    }
-    const Like = (value) => {
-      setIsLike(!isLike);
-    }
+  const save = (value) => {
+    dispatch(actionSave.add(value));
+    setIsSave(!isSave);
+  }
+  const Like = (value) => {
+    dispatch(actionLike.like(value));
+    setIsLike(!isLike);
+  }
   return (
     <View style={styles.container}>
       <View style={styles.actionContainer}>
@@ -67,8 +68,8 @@ const Detail = ({route, navigation}) => {
         style={styles.image}
           source={{uri: food.image}}
         />
-
-      <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
+      <View style={[styles.scrollView, {overflow: 'hidden'}]}>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.description}>
           <View style={styles.header}>
             <View>
@@ -89,18 +90,18 @@ const Detail = ({route, navigation}) => {
                 colors='#f6846b'
               />
            }
-              <Text style={[styles.textPink, {paddingHorizontal:hp(1)}]}>{food.like}</Text>
+              <Text style={[styles.textPink, {paddingHorizontal:hp(1), fontFamily: 'BreeSerif-Regular'}]}>{food.like}</Text>
             </TouchableOpacity>
           </View>
 
           <View style={[styles.rowBetween, {paddingVertical: hp(2.5)}]}>
             <View style={styles.rowBetween}>
-                <Text style={{paddingRight: hp(1.5)}}>Preparation</Text>
-                <Text style={[styles.textPink, {paddingRight: hp(0.5)}]}>{food.duration}</Text>
+                <Text style={{paddingRight: hp(1.5), fontFamily: 'BreeSerif-Regular'}}>Preparation</Text>
+                <Text style={[styles.textPink, {paddingRight: hp(0.5), fontFamily: 'BreeSerif-Regular'}]}>{food.duration}</Text>
             </View>
             <View style={styles.rowBetween}>
-                <Text style={{paddingRight: hp(1.5)}}>Serve</Text>
-                <Text style={styles.textPink}>{food.serve}</Text>
+                <Text style={{paddingRight: hp(1.5), fontFamily: 'BreeSerif-Regular'}}>Serve</Text>
+                <Text style={[styles.textPink, {fontFamily: 'BreeSerif-Regular'}]}>{food.serve}</Text>
             </View>
           </View>
            
@@ -115,7 +116,7 @@ const Detail = ({route, navigation}) => {
                          height={hp(3)}
                          colors='#fd7463'
                       />
-                      <Text>{item}</Text>
+                      <Text style={{fontFamily: 'BreeSerif-Regular'}}>{item}</Text>
                     </View>
                   )
                 })
@@ -134,7 +135,7 @@ const Detail = ({route, navigation}) => {
                          height={hp(3)}
                          colors='#fd7463'
                       />
-                      <Text>{item}</Text>
+                      <Text style={{fontFamily: 'BreeSerif-Regular'}}>{item}</Text>
                     </View>
                   )
                 })
@@ -143,6 +144,7 @@ const Detail = ({route, navigation}) => {
           </View>
         </View>
       </ScrollView>
+      </View>
     </View>
   )
 }

@@ -39,11 +39,11 @@ const IngredientModal = (props) => {
                </View>
                <View style={styles.flexRow}>
                    <Sakura width={hp(2.5)} height={hp(2.5)} colors='#f6846b' />
-                    <Text>Add Ingredient at Item you want</Text>
+                    <Text style={{fontFamily: 'BreeSerif-Regular'}}>Add Ingredient at Item you want</Text>
                </View>
                <View style={styles.flexRow}>
                    <Sakura width={hp(2.5)} height={hp(2.5)} colors='#f6846b' />
-               <Text>Add unit at the amount you want</Text>
+               <Text style={{fontFamily: 'BreeSerif-Regular'}}>Add unit at the amount you want</Text>
                </View>
             </View>
             <View style={[styles.flexRow, {justifyContent: 'flex-end', paddingTop: hp(3)}]}>
@@ -51,7 +51,7 @@ const IngredientModal = (props) => {
                     <Text>Back</Text>
                 </TouchableOpacity> */}
                 <TouchableOpacity style={[styles.actionBtn, styles.shadow, {backgroundColor: '#fd7463'}]} activeOpacity={0.8} onPress={()=> props.add()}>
-                    <Text style={styles.textWhite}>Add</Text>
+                    <Text style={[styles.textWhite, {fontFamily: 'BreeSerif-Regular'}]}>Add</Text>
                 </TouchableOpacity>
             </View>
         </View>

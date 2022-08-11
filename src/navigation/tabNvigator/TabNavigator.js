@@ -38,6 +38,7 @@ const TabNavigator = () => {
               />
             ),
             tabBarLabelStyle: {
+              fontFamily: 'BreeSerif-Regular',
               fontSize: hp(1.5),
               paddingBottom: hp(0.7),
             },
@@ -61,6 +62,7 @@ const TabNavigator = () => {
               />
             ),
             tabBarLabelStyle: {
+              fontFamily: 'BreeSerif-Regular',
               fontSize: hp(1.5),
               paddingBottom: hp(0.7),
             },
@@ -84,6 +86,7 @@ const TabNavigator = () => {
               />
             ),
             tabBarLabelStyle: {
+              fontFamily: 'BreeSerif-Regular',
               fontSize: hp(1.5),
               paddingBottom: hp(0.7),
             },
@@ -107,6 +110,7 @@ const TabNavigator = () => {
               />
             ),
             tabBarLabelStyle: {
+              fontFamily: 'BreeSerif-Regular',
               fontSize: hp(1.5),
               paddingBottom: hp(0.7),
             },

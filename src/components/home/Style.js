@@ -32,9 +32,9 @@ const styles = StyleSheet.create ({
         paddingTop: hp(2),
     },
     componentContainer: {
+        flex: 1,
         width: wp(100),
         height: hp(100),
-        paddingVertical: hp(2),
         backgroundColor: '#fff'
     },
     headerBox: {
@@ -44,13 +44,15 @@ const styles = StyleSheet.create ({
         backgroundColor: '#f6846b'
     },
     title: {
+        fontFamily: 'BreeSerif-Regular',
+        fontWeight: '500',
         fontSize: hp(3.5),
-        fontWeight: '900',
         color: '#fff'
     },
     slogan: {
+        fontFamily: 'BreeSerif-Regular',
         fontSize: hp(2.5),
-        fontWeight: '800',
+        fontWeight: '300',
         color: '#fff'
     },
     avatarContainer: {
@@ -77,26 +79,30 @@ const styles = StyleSheet.create ({
         alignItems: "center",
         backgroundColor: '#f8f7f7',
         borderRadius: hp(50),
-        paddingHorizontal: hp(3),
+        paddingLeft: hp(3),
+        paddingRight: hp(7),
         marginTop: hp(2),
         marginBottom: hp(5)
     },
     input: {
+        fontFamily: 'BreeSerif-Regular',
+        fontSize: hp(2),
         width: '100%',
         paddingHorizontal: hp(2),
     },
     subTitle: {
+        fontFamily: 'BreeSerif-Regular',
         fontSize: hp(2),
         color: '#757575'
     },
     card: {
-        width: wp(46),
+        width: wp(47.5),
         height: hp(35),
         backgroundColor: '#f6846b',
         flexDirection: "column",
         justifyContent: "space-between",
         marginVertical: hp(1),
-        marginHorizontal: hp(1),
+        marginHorizontal: hp(0.7),
         position: "relative",
         borderRadius: hp(1),
         overflow: "hidden",
@@ -108,12 +114,14 @@ const styles = StyleSheet.create ({
     },
     foodName: {
         color: '#fff',
+        fontFamily: 'BreeSerif-Regular',
         fontSize: hp(2.5),
-        fontWeight: '700',
+        fontWeight: '500',
     },
     duration: {
+        fontFamily: 'BreeSerif-Regular',
         color: '#fff',
-        fontSize: hp(1.5),
+        fontSize: hp(2),
         fontWeight: '400',
         paddingHorizontal: hp(0.5),
     },
