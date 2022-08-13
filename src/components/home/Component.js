@@ -107,7 +107,7 @@ const Component = (props) => {
         :
         <View style={styles.flex}>
           <ChefIcon width={wp(30)} height={hp(20)} colors='#d5d5d5' />
-          <Text style={{color: '#d5d5d5', fontSize: hp(3), fontWeight: 'bold'}}>No Recipes!</Text>
+          <Text style={{color: '#d5d5d5', fontSize: hp(3), fontWeight: '500', fontFamily: 'BreeSerif-Regular'}}>{local.nrecipe}</Text>
         </View>
       }
     </View>

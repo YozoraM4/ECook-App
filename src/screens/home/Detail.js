@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 import { View, Text, TouchableOpacity, Image, FlatList } from 'react-native'
 import { ScrollView } from 'react-native-virtualized-view';
 import {useDispatch, useSelector} from 'react-redux'
@@ -19,31 +19,59 @@ import HeartIcon from '@assets/icons/heart';
 import Sakura from '@assets/icons/sakura';
 
 // Components
-import * as actionSave from '../../store/actions/save';
+import { AppContext } from '../../context/context';
+import * as actionSave from '../../store/actions/save'
 import * as actionLike from '../../store/actions/like';
 import * as actionRecipe from '../../store/actions/recipe';
 import foodList from '../../data/food';
 
 const Detail = ({route, navigation}) => {
-  const [isSave, setIsSave] = useState(false);
-  const [isLike, setIsLike] = useState(false);
   const {food} = route.params;
+  const {isSave, getIsSave, isLike, getIsLike} = useContext(AppContext);
 
   const dispatch = useDispatch();
   const save = (value) => {
     dispatch(actionSave.add(value));
-    setIsSave(!isSave);
+    getIsSave(!isSave);
   }
-  const updateLike = useSelector(state=> state.RecipeList.Recipes)
-  const Like = (value) => {
-    dispatch(actionRecipe.update(value));
-    dispatch(actionLike.like(value));
-    setIsLike(!isLike);
+  
+  const unSave = (value) => {
+    dispatch(actionSave.remove(value.id))
+    getIsSave(!isSave);
   }
 
-  const Back = () => {
-    navigation.goBack();
-    dispatch(actionRecipe.recipe(foodList))
+  const Like = (value) => {
+    let update = {
+      id: food.id,
+      name: food.name,
+      image: food.image,
+      duration: food.duration,
+      style: food.style,
+      serve: food.serve,
+      like: food.like + 1,
+      ingredients: food.ingredients,
+      instructions: food.instructions,
+    }
+    dispatch(actionRecipe.update(update));
+    dispatch(actionLike.like(value));
+    getIsLike(!isLike);
+  }
+
+  const UnLike = (value) => {
+    let update = {
+      id: food.id,
+      name: food.name,
+      image: food.image,
+      duration: food.duration,
+      style: food.style,
+      serve: food.serve,
+      like: food.like - 1,
+      ingredients: food.ingredients,
+      instructions: food.instructions,
+    }
+    dispatch(actionRecipe.update(update));
+    dispatch(actionLike.unlike(value.id));
+    getIsLike(!isLike);
   }
 
   const positions = useSharedValue(hp(10));
@@ -64,28 +92,32 @@ const Detail = ({route, navigation}) => {
     <View style={styles.container}>
       <View style={styles.actionContainer}>
         <View style={styles.actionBar}>
-          <TouchableOpacity style={styles.actionBtn} activeOpacity={0.8} onPress={Back}>
+          <TouchableOpacity style={styles.actionBtn} activeOpacity={0.8} onPress={()=> navigation.goBack()}>
             <BackIcon
                 width={hp(2.5)}
                 height={hp(2.5)}
                 colors='#f6846b'
               />
           </TouchableOpacity>
-          <TouchableOpacity onPress={()=> save(food)} style={styles.actionBtn} activeOpacity={0.8}>
+          
            {isSave ?
-               <BookMarkIcon
-                width={hp(2.5)}
-                height={hp(2.5)}
-                colors='#f6846b'
-                fill='#f6846b'
-              /> :
-              <BookMarkIcon
-                width={hp(2.5)}
-                height={hp(2.5)}
-                colors='#f6846b'
-              />
+              <TouchableOpacity onPress={()=> unSave(food)} style={styles.actionBtn} activeOpacity={0.8}>
+                <BookMarkIcon
+                  width={hp(2.5)}
+                  height={hp(2.5)}
+                  colors='#f6846b'
+                  fill='#f6846b'
+                /> 
+              </TouchableOpacity>
+              :
+              <TouchableOpacity onPress={()=> save(food)} style={styles.actionBtn} activeOpacity={0.8}>
+                <BookMarkIcon
+                  width={hp(2.5)}
+                  height={hp(2.5)}
+                  colors='#f6846b'
+                />
+              </TouchableOpacity>
            }
-          </TouchableOpacity>
         </View>
       </View>
 
@@ -102,28 +134,31 @@ const Detail = ({route, navigation}) => {
                 <Text style={styles.headTitle}>{food.name}</Text>
                 <Text style={styles.subTitle}>{food.style}</Text>
               </View>
-              <TouchableOpacity activeOpacity={0.8} onPress={()=> Like(food)} style={styles.rowBetween}>
+              
               {isLike ?
-                <View style={styles.flexRow}>
-                  <HeartIcon
-                    width={hp(3)}
-                    height={hp(3)}
-                    colors='#f6846b'
-                    fill='#f6846b'
-                  /> 
-                  <Text style={[styles.textPink, {paddingHorizontal:hp(1), fontFamily: 'BreeSerif-Regular'}]}>{updateLike.like}</Text>
-                </View>
+                <TouchableOpacity activeOpacity={0.8} onPress={()=> UnLike(food)} style={styles.rowBetween}>
+                  <View style={styles.flexRow}>
+                    <HeartIcon
+                      width={hp(3)}
+                      height={hp(3)}
+                      colors='#f6846b'
+                      fill='#f6846b'
+                    /> 
+                    <Text style={[styles.textPink, {paddingHorizontal:hp(1), fontFamily: 'BreeSerif-Regular'}]}>{food.like}</Text>
+                  </View>
+                </TouchableOpacity>
                 :
-                <View style={styles.flexRow}>
-                  <HeartIcon
-                    width={hp(3)}
-                    height={hp(3)}
-                    colors='#f6846b'
-                  /> 
-                  <Text style={[styles.textPink, {paddingHorizontal:hp(1), fontFamily: 'BreeSerif-Regular'}]}>{food.like}</Text>
-                </View>
+                <TouchableOpacity activeOpacity={0.8} onPress={()=> Like(food)} style={styles.rowBetween}>
+                  <View style={styles.flexRow}>
+                    <HeartIcon
+                      width={hp(3)}
+                      height={hp(3)}
+                      colors='#f6846b'
+                    /> 
+                    <Text style={[styles.textPink, {paddingHorizontal:hp(1), fontFamily: 'BreeSerif-Regular'}]}>{food.like}</Text>
+                  </View>
+                </TouchableOpacity>
             }
-              </TouchableOpacity>
             </View>
 
             <View style={[styles.rowBetween, {paddingVertical: hp(2.5)}]}>

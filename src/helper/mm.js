@@ -25,6 +25,7 @@ export default {
   search: 'ရှာဖွေရန်',
   popular: "နာမည်ကြီး ဟင်းလျှာများ",
   result: 'တွေ့ရှိသော ချက်ပြုတ်နည်း',
+  nrecipe: 'ချက်ပြုတ်နည်း မရှိသေးပါ',
 
   // Shopping
   shopping: 'စျေး၀ယ်ရန်',

@@ -1,28 +1,27 @@
 export default foods = [
     {
       "id": 1,
-      "name": 'Ramen With Shrimps',
-      "image": 'https://www.everydayeasyeats.com/wp-content/uploads/2019/02/Thai-Spicy-Shrimp-Noodle-Soup-1.jpg',
-      "duration": '15 min',
-      "style": 'Classic japanese recipe',
-      "serve": '1',
-      "like": 245,
+      "name": 'Butternut Squash Soup',
+      "image": 'https://biancazapatka.com/wp-content/uploads/2020/10/cremige-kuerbissuppe.jpg',
+      "duration": '35 min',
+      "style": 'traditional soup recipe',
+      "serve": '4',
+      "like": 452,
       "ingredients": [
-        "Noddle",
-        "Shrimps",
-        "Vegetable",
-        "Olive Oil",
-        "Sriracha",
-        "Soy Sauce",
-        "Garlic",
-        "Ginger"
+        "Squash",
+        "Begetable Broth",
+        "Curry Powder",
       ],
       "instructions": [
-        "Cook the shrimp. In a large pot, season the shrimp with chili powder then cook until no longer pink.",
-        "Cook Vegetable, ginger and garlic. Cook until fragrant and the Vegetable are translucent.",
-        "Add the Sriracha, Olive Oil and soy sauce.",
-        "Add noodles and spinach",
-        "Ladle into bowls."
+        "Slice butternut in half.",
+        "Place cut-side-down on a cookie sheet and bake at 350F for 20 to 45 minutes, until the squash can be pireced easily with a fork buth be careful not to burn.",
+        "In the skin starts turning brown, it's done. Set aside to cool until it is safe to handle.",
+        "Scoop out seeds and stringy matter and discard.",
+        "Then scoop out flesh and transfer to a blender.",
+        "Add vegetable broth, starting with 1/2 cup, adding more as necessary until the soup becomes thick and silky but totally pureed.",
+        "Add curry powder to taste.",
+        "Gently reheat on the stove over low heat, adding salt to taste if desired.",
+        "You can also add cayenne or hot sauce for a spicer curry flavouring."
       ]
     },
     {
@@ -183,27 +182,28 @@ export default foods = [
     },
     {
       "id": 8,
-      "name": 'Butternut Squash Soup',
-      "image": 'https://biancazapatka.com/wp-content/uploads/2020/10/cremige-kuerbissuppe.jpg',
-      "duration": '35 min',
-      "style": 'traditional soup recipe',
-      "serve": '4',
-      "like": 452,
+      "name": 'Ramen With Shrimps',
+      "image": 'https://www.everydayeasyeats.com/wp-content/uploads/2019/02/Thai-Spicy-Shrimp-Noodle-Soup-1.jpg',
+      "duration": '15 min',
+      "style": 'Classic japanese recipe',
+      "serve": '1',
+      "like": 245,
       "ingredients": [
-        "Squash",
-        "Begetable Broth",
-        "Curry Powder",
+        "Noddle",
+        "Shrimps",
+        "Vegetable",
+        "Olive Oil",
+        "Sriracha",
+        "Soy Sauce",
+        "Garlic",
+        "Ginger"
       ],
       "instructions": [
-        "Slice butternut in half.",
-        "Place cut-side-down on a cookie sheet and bake at 350F for 20 to 45 minutes, until the squash can be pireced easily with a fork buth be careful not to burn.",
-        "In the skin starts turning brown, it's done. Set aside to cool until it is safe to handle.",
-        "Scoop out seeds and stringy matter and discard.",
-        "Then scoop out flesh and transfer to a blender.",
-        "Add vegetable broth, starting with 1/2 cup, adding more as necessary until the soup becomes thick and silky but totally pureed.",
-        "Add curry powder to taste.",
-        "Gently reheat on the stove over low heat, adding salt to taste if desired.",
-        "You can also add cayenne or hot sauce for a spicer curry flavouring."
+        "Cook the shrimp. In a large pot, season the shrimp with chili powder then cook until no longer pink.",
+        "Cook Vegetable, ginger and garlic. Cook until fragrant and the Vegetable are translucent.",
+        "Add the Sriracha, Olive Oil and soy sauce.",
+        "Add noodles and spinach",
+        "Ladle into bowls."
       ]
     },
   ]

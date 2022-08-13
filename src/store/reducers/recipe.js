@@ -14,19 +14,14 @@ export default (state = initialState, action) => {
             };
 
         case UPDATE:
-            const updateData = {
-                id: action.updateRecipe.id,
-                name: action.updateRecipe.name,
-                image: action.updateRecipe.image,
-                duration: action.updateRecipe.duration,
-                style: action.updateRecipe.style,
-                serve: action.updateRecipe.serve,
-                like: action.updateRecipe.like + 1,
-                ingredients: action.updateRecipe.ingredients,
-                instructions: action.updateRecipe.instructions,
-            }
+            let recipeIndex = state.Recipes.findIndex(
+                item => item.id === action.updateRecipe.id
+            )
+            const updateLike = [...state.Recipes]
+            updateLike[recipeIndex] = action.updateRecipe
             return{
-                Recipes: updateData
+                ...state,
+                Recipes: updateLike,
             };
 
         case SEARCH: 

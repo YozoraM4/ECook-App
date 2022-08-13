@@ -1,5 +1,5 @@
 import React,{ useState, useEffect } from 'react'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux';
 import {
   widthPercentageToDP as wp,
@@ -35,7 +35,7 @@ const Home = ({navigation}) => {
 
   const dispatch = useDispatch();
   const recipeList = useSelector(state=> state.RecipeList.Recipes)
-
+  
   const SearchHandler = () => {
     dispatch(actionRecipe.search(search))
     setClear(!clear);

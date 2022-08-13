@@ -35,11 +35,15 @@ const Intro = () => {
   const GoAuth = () => {
     let into = 'shown';
     AppStorage.setItem('@intro', into)
+    setTimeout(()=> {  
       getIntro(false);
+    }, 500)
   }
   
   const NextHandler = () => {
-    setStep(false);
+    setTimeout(()=> {  
+      setStep(false);  
+    }, 500)
   }
   
   return (

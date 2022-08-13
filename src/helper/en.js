@@ -25,6 +25,7 @@ export default {
   search: 'Search Recipe',
   popular: "Popular Recipes",
   result: 'Recipe Found',
+  nrecipe: 'No Recipe',
 
   // Shopping
   shopping: 'Shopping',
@@ -34,7 +35,7 @@ export default {
   ingredient: 'Ingredient',
   unit: 'Unit',
   title: 'add an item name at Ingredient',
-  titleu: 'add an amount or unit at Unit',
+  titleu: 'add an amount of unit at Unit',
 
   // Save
   nsRecipe: 'No Saved Recipes!',

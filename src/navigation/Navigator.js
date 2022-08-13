@@ -17,11 +17,15 @@ const Navigator = () => {
   const [auth, setAuth] = useState(false);
   const [lang, setLang] = useState('EN');
   const [userInfo, setUserInfo] = useState();
+  const [isLike, setIsLike] = useState(false);
+  const [isSave, setIsSave] = useState(false);
 
   const context = {
     auth,
     lang,
     userInfo,
+    isSave,
+    isLike,
 
     getIntro: value => {
       setIntro(value);
@@ -35,6 +39,12 @@ const Navigator = () => {
     getUserInfo: value => {
       setUserInfo(value);
     },
+    getIsSave: value => {
+      setIsSave(value);
+    },
+    getIsLike: value => {
+      setIsLike(value);
+    }
   }
 
   useEffect(()=> {
