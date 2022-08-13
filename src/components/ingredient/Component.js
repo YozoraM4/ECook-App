@@ -14,7 +14,11 @@ import BasketIcon from '@assets/icons/basket'
 import Sakura from '@assets/icons/sakura'
 import Close from '@assets/icons/close'
 
+// Components
+import { UseLocal } from '../../hook';
+
 const Component = (props) => {
+  const local = UseLocal();
   const temp = props.data
   const renderComponent = ({item}) => {
     return (
@@ -35,7 +39,7 @@ const Component = (props) => {
     <View style={styles.componentContainer}>
         <View style={[styles.rowBetween, {paddingHorizontal: hp(2), paddingVertical: hp(0.5), backgroundColor: '#f6846b'}]}>
           <View>
-            <Text style={[styles.headline, styles.textWhite]}>Shopping</Text>
+            <Text style={[styles.headline, styles.textWhite]}>{local.shopping}</Text>
           </View>
           <TouchableOpacity onPress={()=> props.show()}  style={{padding: hp(1), transform: [{ rotate: "45deg" }]}}>
               <Close width={wp(5)} height={hp(5)} colors='#fff' fill='#fff' />
@@ -45,7 +49,7 @@ const Component = (props) => {
         {temp.length > 0 ?
           <>
             <View style={styles.flexRow}>
-              <Text style={[styles.textPink, {fontSize: hp(2.5), fontFamily: 'BreeSerif-Regular', fontWeight: '200', padding: hp(2)}]}>Total Ingredients : {temp.length}</Text>
+              <Text style={[styles.textPink, {fontSize: hp(2.5), fontFamily: 'BreeSerif-Regular', fontWeight: '200', padding: hp(2)}]}>{local.totalShopping} : {temp.length}</Text>
             </View>
             <ScrollView style={{paddingHorizontal: hp(2)}} showsVerticalScrollIndicator={false}>
                 <FlatList  
@@ -60,7 +64,7 @@ const Component = (props) => {
           :
           <View style={styles.flex}>
             <BasketIcon width={wp(30)} height={hp(20)} colors='#d5d5d5' />
-            <Text style={{color: '#d5d5d5', fontFamily: 'BreeSerif-Regular', fontSize: hp(3), fontWeight: '500'}}>No Ingredients!</Text>
+            <Text style={{color: '#d5d5d5', fontFamily: 'BreeSerif-Regular', fontSize: hp(3), fontWeight: '500'}}>{local.nShopping}</Text>
           </View>
         }
     </View>

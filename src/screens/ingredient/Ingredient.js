@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, TouchableOpacity, Image } from 'react-native'
+import { View } from 'react-native'
 import {useDispatch, useSelector} from 'react-redux';
 import {
   widthPercentageToDP as wp,
@@ -37,7 +37,9 @@ const Ingredient = () => {
       unit: unit,
     }
     dispatch(actionItem.add(data));
-    setModal(!modal)
+    setModal(!modal);
+    setItem('');
+    setUnit('')
   }
   
   const DeleteHandler = (value) => {

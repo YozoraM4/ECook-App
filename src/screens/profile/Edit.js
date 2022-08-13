@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react'
-import { View, Text, TouchableOpacity, Image, TextInput, PermissionsAndroid } from 'react-native'
+import { View, Text, TouchableOpacity, Image, TextInput } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux';
 import {launchImageLibrary} from 'react-native-image-picker';
 import {
@@ -60,7 +60,7 @@ const Edit = ({navigation}) => {
                         colors="#fff"
                     />
                 </TouchableOpacity>
-                <Text style={[styles.textWhite, {fontFamily: 'BreeSerif-Regular', fontSize: hp(2.5), paddingTop: hp(0.5)}]}>Edit Profile</Text>
+                <Text style={[styles.textWhite, {fontFamily: 'BreeSerif-Regular', fontSize: hp(2.5), paddingTop: hp(0.5)}]}>{local.edit}</Text>
             </View>
 
 
@@ -92,7 +92,6 @@ const Edit = ({navigation}) => {
                     </View>
                     <View>
                     <Text style={{fontFamily: 'BreeSerif-Regular'}}>{local.SRecipes}</Text>
-                    {/* <Text style={styles.textPink}> | </Text> */}
                     <View style={styles.flexRow}>
                         <BookMarkIcon
                         width={wp(5)}
@@ -106,50 +105,28 @@ const Edit = ({navigation}) => {
                 </View>
                 <View>
                     <View style={[styles.rowAround]}>
-                        {/* <Text style={[styles.textPink, {fontFamily: 'BreeSerif-Regular', fontSize: hp(2.5)}]}>Update name : </Text> */}
                         <TextInput 
                             editable
                             value={name}
                             onChangeText={value=> setName(value)}
-                            placeholder='Update Name ....'
+                            placeholder={local.updName}
                             style={[styles.textPink, styles.input]}
                         />
                     </View>
                     <View style={styles.rowAround}>
-                        {/* <Text style={[styles.textPink, {fontFamily: 'BreeSerif-Regular', fontSize: hp(2.5)}]}>Update password : </Text> */}
                         <TextInput 
                             editable
                             value={password}
                             onChangeText={value=> setPassword(value)}
-                            placeholder='Update Password ....'
+                            placeholder={local.updPwd}
                             style={[styles.textPink, styles.input]}
                         />
                     </View>
-                    {/* <View style={styles.rowAround}>
-                        <Text style={[styles.textPink, {fontFamily: 'BreeSerif-Regular', fontSize: hp(2.5)}]}>Gender : </Text>
-                        <TextInput 
-                            editable
-                            value=''
-                            onChangeText=''
-                            placeholder='Male'
-                            style={[styles.textPink, {fontFamily: 'BreeSerif-Regular', fontSize: hp(2.5)}]}
-                        />
-                    </View>
-                    <View style={styles.rowAround}>
-                        <Text style={[styles.textPink, {fontFamily: 'BreeSerif-Regular', fontSize: hp(2.5)}]}>Phone : </Text>
-                        <TextInput 
-                            editable
-                            value=''
-                            onChangeText=''
-                            placeholder='+959*********'
-                            style={[styles.textPink, {fontFamily: 'BreeSerif-Regular', fontSize: hp(2.5)}]}
-                        />
-                    </View> */}
                 </View>
                 <View>
                 </View>
                 <TouchableOpacity activeOpacity={0.8} onPress={UpdateHandler} style={styles.confirmBtn}>
-                    <Text style={[styles.textWhite, {fontFamily: 'BreeSerif-Regular', fontSize: hp(2)}]}>Confirm</Text>
+                    <Text style={[styles.textWhite, {fontFamily: 'BreeSerif-Regular', fontSize: hp(2)}]}>{local.confirm}</Text>
                 </TouchableOpacity>
             </View>
         </View>

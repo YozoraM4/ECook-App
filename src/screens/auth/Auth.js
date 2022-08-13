@@ -11,26 +11,16 @@ import styles from '@components/auth/Style'
 // Components
 import { AppContext } from '@context/context'
 import { AppStorage } from '../../utils';
-import LanguageModal from '../../modal/LanguageModal'
 import LoginComponent from '@components/auth/login/Component';
 import RegisterComponent from '@components/auth/register/Component';
 
 const Login = ({navigation}) => {
-  const [showModal, setShowModal] = useState(false);
   const [showBox, setShowBox] = useState(true);
   const [name, setName] = useState()
   const [password, setPassword] = useState()
 
-  const {lang, getLang, getUserInfo, getAuth} = useContext(AppContext);
+  const {getUserInfo, getAuth} = useContext(AppContext);
 
-  const showLanguageModal = () => {
-    setShowModal(true);
-  }
-  const hideLanguageModal = (value) => {
-    AppStorage.setItem('@user.language', value);
-    getLang(value)
-    setShowModal(false);
-  };
   const ShowBoxHandler = () => {
     setShowBox(!showBox)
   }
@@ -69,12 +59,6 @@ const Login = ({navigation}) => {
   }
   return (
     <View style={styles.container}>
-      <View style={styles.langBox}>
-        <TouchableOpacity onPress={showLanguageModal}>
-          <Text style={[styles.textWhite, {fontFamily: 'BreeSerif-Regular'}]}>Language {lang}</Text>
-        </TouchableOpacity>
-      </View>
-
       {showBox ?
         <LoginComponent 
           nameValue={name}
@@ -94,13 +78,6 @@ const Login = ({navigation}) => {
           goLogin={ShowBoxHandler}
         />
      }
-  
-      {showModal && (
-        <LanguageModal
-          languageAction={hideLanguageModal}
-          selectedLang={lang}
-        />
-      )}
     </View>
   )
 }

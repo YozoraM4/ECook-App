@@ -2,11 +2,11 @@ export default foods = [
     {
       "id": 1,
       "name": 'Ramen With Shrimps',
-      "image": 'https://cdn.yosushi.com/r/w-1260/YoSushi/files/ab/ab3c8e4f-9207-4908-81fc-08cfc4a2e649.637843270330000000.png',
+      "image": 'https://www.everydayeasyeats.com/wp-content/uploads/2019/02/Thai-Spicy-Shrimp-Noodle-Soup-1.jpg',
       "duration": '15 min',
       "style": 'Classic japanese recipe',
       "serve": '1',
-      "like": '245' ,
+      "like": 245,
       "ingredients": [
         "Noddle",
         "Shrimps",
@@ -32,7 +32,7 @@ export default foods = [
       "duration": '5 min',
       "style": 'Classic japanese recipe',
       "serve": '1',
-      "like": '138' ,
+      "like": 138,
       "ingredients": [
         "Usucha(thin matcha)",
         "Boiling Water",
@@ -54,7 +54,7 @@ export default foods = [
       "duration": '20 min',
       "style": 'Classic japanese recipe',
       "serve": '1',
-      "like": '953' ,
+      "like": 953,
       "ingredients": [
         "onion",
         "potato",
@@ -78,11 +78,11 @@ export default foods = [
     {
       "id": 4,
       "name": 'Salmon With Couscous',
-      "image": 'https://cdn.shopify.com/s/files/1/0592/9130/4128/articles/Fred_s_Big_Cod_Fillets_with_Mediterranean_veg_and_giant_couscous-min-min_1200x1200.png?v=1631012543',
+      "image": 'https://realfood.tesco.com/media/images/moroccan-style-salmon-with-couscoush-8bcd2e37-cb67-4d9f-83a4-6bd7bd854305-0-472x310.jpg',
       "duration": '25 min',
       "style": 'European recipe',
       "serve": '1',
-      "like": '346' ,
+      "like": 346,
       "ingredients": [
         "salmon fillets",
         "olive oil",
@@ -103,11 +103,11 @@ export default foods = [
     {
       "id": 5,
       "name": 'Scrambled Tofu',
-      "image": 'https://www.thefullhelping.com/wp-content/uploads/2010/08/Classic-tofu-scramble-2-1-500x500.jpg',
+      "image": 'https://www.vnutritionandwellness.com/wp-content/uploads/2021/02/tofu-crumbles.jpg',
       "duration": '15 min',
       "style": 'Chinese recipe',
       "serve": '2',
-      "like": '875' ,
+      "like": 875,
       "ingredients": [
         'Tofu',
         "Bell Pepper",
@@ -133,7 +133,7 @@ export default foods = [
       "duration": '6 min',
       "style": 'Cannellini Salad',
       "serve": '1',
-      "like": '232' ,
+      "like": 232,
       "ingredients": [
         "Capers",
         "Tuna",
@@ -160,7 +160,7 @@ export default foods = [
       "duration": '50 min',
       "style": 'fry potato',
       "serve": '2',
-      "like": '953' ,
+      "like": 953,
       "ingredients": [
         "garlic",
         "potato",
@@ -184,11 +184,11 @@ export default foods = [
     {
       "id": 8,
       "name": 'Butternut Squash Soup',
-      "image": 'https://www.warrennash.co.uk/recipes/spicybutternutsquashsoup/spicybutternutsquashsouprecipe_xl.jpg',
+      "image": 'https://biancazapatka.com/wp-content/uploads/2020/10/cremige-kuerbissuppe.jpg',
       "duration": '35 min',
       "style": 'traditional soup recipe',
       "serve": '4',
-      "like": '452' ,
+      "like": 452,
       "ingredients": [
         "Squash",
         "Begetable Broth",

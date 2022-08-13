@@ -86,11 +86,11 @@ const Component = (props) => {
           </View>
           
           <View style={styles.sectionBox}>
-            <Text style={[styles.options, styles.textPink]}>Options</Text>
+            <Text style={[styles.options, styles.textPink]}>{local.options}</Text>
             <TouchableOpacity activeOpacity={0.8} onPress={()=> props.edit()} style={[styles.rowBetween, styles.section, styles.shadow]}>
               <View style={styles.flexRow}>
                 <ChefIcon width={wp(4)} height={hp(4)} colors="#fd7463"/>
-                <Text style={[styles.actionText, {fontFamily: 'BreeSerif-Regular'}]}>Edit Profile</Text>
+                <Text style={[styles.actionText, {fontFamily: 'BreeSerif-Regular'}]}>{local.edit}</Text>
               </View>
               <View style={styles.flip}>
                 <BackIcon
@@ -103,7 +103,7 @@ const Component = (props) => {
             <TouchableOpacity activeOpacity={0.8} onPress={()=> props.changeLang()} style={[styles.rowBetween, styles.section, styles.shadow]}>
               <View style={styles.flexRow}>
                 <Language width={wp(4)} height={hp(4)} colors="#fd7463"/>
-                <Text style={[styles.actionText, {fontFamily: 'BreeSerif-Regular'}]}>Change Language</Text>
+                <Text style={[styles.actionText, {fontFamily: 'BreeSerif-Regular'}]}>{local.lang}</Text>
               </View>
               <View style={styles.flip}>
                 <BackIcon
@@ -116,7 +116,7 @@ const Component = (props) => {
             <TouchableOpacity activeOpacity={0.8} onPress={()=> props.goBasket()} style={[styles.rowBetween, styles.section, styles.shadow]}>
               <View style={styles.flexRow}>
                 <BasketIcon width={wp(4)} height={hp(4)} colors="#fd7463"/>
-                <Text style={[styles.actionText, {fontFamily: 'BreeSerif-Regular'}]}>Shopping List</Text>
+                <Text style={[styles.actionText, {fontFamily: 'BreeSerif-Regular'}]}>{local.shopList}</Text>
               </View>
               <View style={styles.flip}>
                 <BackIcon
@@ -129,7 +129,7 @@ const Component = (props) => {
             <TouchableOpacity activeOpacity={0.8} onPress={()=> props.goSave()} style={[styles.rowBetween, styles.section, styles.shadow]}>
               <View style={styles.flexRow}>
                 <BookMarkIcon width={wp(4)} height={hp(4)} colors="#fd7463"/>
-                <Text style={[styles.actionText, {fontFamily: 'BreeSerif-Regular'}]}>Saved Recipes</Text>
+                <Text style={[styles.actionText, {fontFamily: 'BreeSerif-Regular'}]}>{local.saved}</Text>
               </View>
               <View style={styles.flip}>
                 <BackIcon

@@ -7,7 +7,7 @@ import {
 const styles = StyleSheet.create ({
     container: {
         width: wp(100),
-        height: hp(100),
+        height: '100%',
         position: "absolute",
         alignItems: "center",
         justifyContent: 'center',

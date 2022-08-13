@@ -1,5 +1,6 @@
-import React, {useContext} from 'react'
+import React, {useEffect, useContext} from 'react'
 import { View, Text, TextInput, FlatList, Image, TouchableOpacity } from 'react-native'
+import Animated,{useSharedValue, useAnimatedStyle, withTiming, Easing} from 'react-native-reanimated';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -12,12 +13,29 @@ import styles from '@components/home/Style';
 import SearchIcon from '@assets/icons/search';
 import ChefIcon from '@assets/icons/cook';
 import Clock from '@assets/icons/clock';
+import Close from '@assets/icons/close';
 
 // Components
 import { AppContext } from '@context/context'
+import { UseLocal } from '../../hook';
 
 const Component = (props) => {
+  const local = UseLocal();
   const {userInfo} = useContext(AppContext);
+
+  const positions = useSharedValue(wp(-100));
+  const animatedHeader = useAnimatedStyle(()=> {
+    return {
+      transform: [{translateX: positions.value}]
+    }
+  })
+
+  useEffect(()=> {
+    positions.value = withTiming(wp(0), {
+      duration: 1000,
+      easing: Easing.in
+    })
+  },[])
 
   const renderComponent = ({item}) => {
     return (
@@ -35,32 +53,48 @@ const Component = (props) => {
   }
   return (
     <View style={styles.componentContainer}>
-      <View style={styles.headerBox}>
-        <View style={styles.rowBetween}>
+      <View style={[styles.headerBox]}>
+        <Animated.View style={[styles.rowBetween, animatedHeader]}>
           <View style={styles.header}>
-            <Text style={styles.title}>Hello, {userInfo.name}</Text>
-            <Text style={styles.slogan}>What do you want to cook today?</Text>
+            <Text style={styles.title}>{local.hello}, {userInfo.name}</Text>
+            <Text style={styles.slogan}>{local.header}</Text>
           </View>
-        </View>
+        </Animated.View>
         <View style={styles.searchBox}>
           <TextInput
-            inlineImageLeft='search_icon'
-            placeholder='Recipe'
+            value={props.search}
+            onChangeText={props.onChangeSearch}
+            placeholder={local.search}
             style={styles.input}
           />
-          <View>
-            <SearchIcon 
-              colors='#fd7463'
-              width={hp(3)}
-              height={hp(3)}
-            />
-          </View>
+          {props.clear ?
+            <TouchableOpacity onPress={()=> props.clearAction()}>
+              <Close 
+                colors='#fd7463'
+                width={hp(2.5)}
+                height={hp(2.5)}
+              />
+            </TouchableOpacity>
+            :
+
+            <TouchableOpacity onPress={()=> props.searchAction()}>
+              <SearchIcon 
+                colors='#fd7463'
+                width={hp(3)}
+                height={hp(3)}
+              />
+            </TouchableOpacity>
+          }
         </View>
       </View>
       
-      <View style={{padding: hp(2)}}>
-        <Text style={styles.subTitle}>Popular Recipes</Text>
-      </View>
+      <Animated.View style={{padding: hp(2)}}>
+        {props.clear ?
+          <Text style={styles.subTitle}>{local.result} : {props.data.length}</Text>
+          :
+          <Text style={styles.subTitle}>{local.popular}</Text>
+        } 
+      </Animated.View>
       { props.data.length > 0 ?
         <FlatList 
           showsVerticalScrollIndicator={false}

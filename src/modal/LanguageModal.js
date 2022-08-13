@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
+import Animated,{useSharedValue, useAnimatedStyle, withTiming, Easing} from 'react-native-reanimated';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -13,12 +14,29 @@ import Sakura from '../../assets/icons/sakura'
 
 // Components
 import Languages from '../data/language';
+import { UseLocal } from '../hook';
 
 const LanguageModal = (props) => {
+  const local = UseLocal();
+
+  const positions = useSharedValue(hp(-100));
+  const animatedModal = useAnimatedStyle(()=> {
+  return {
+      transform: [{translateY: positions.value}]
+  }
+  })
+
+  useEffect(()=> {
+  positions.value = withTiming(hp(0), {
+      duration: 500,
+      easing: Easing.in
+  })
+  },[])
+
   return (
     <View style={styles.container}>
-      <View style={[styles.modalBox, styles.shadow]}>
-          <Text style={styles.header}>Change Language</Text>
+      <Animated.View style={[animatedModal, styles.modalBox, styles.shadow]}>
+          <Text style={styles.header}>{local.lang}</Text>
           {Languages.map((item, index) => (
             <View key={item.id}>
                 <TouchableOpacity style={styles.item}
@@ -36,7 +54,7 @@ const LanguageModal = (props) => {
                 </TouchableOpacity>
             </View>
             ))}
-      </View>
+      </Animated.View>
     </View>
   )
 }

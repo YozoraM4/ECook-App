@@ -1,6 +1,7 @@
 import {ADD, REMOVE} from '../type';
 
 export const add = data => {
+    console.log(data)
     return {
         type: ADD,
         addItem: data,

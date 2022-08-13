@@ -1,4 +1,4 @@
-import {RECIPE, UPDATE} from '../type';
+import {RECIPE, UPDATE, SEARCH} from '../type';
 
 export const recipe = data => {
     return {
@@ -11,5 +11,12 @@ export const update = data => {
     return {
         type: UPDATE,
         updateRecipe: data,
+    };
+};
+
+export const search = data => {
+    return {
+        type: SEARCH,
+        searchRecipe: data,
     };
 };

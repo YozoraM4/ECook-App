@@ -46,7 +46,7 @@ const styles = StyleSheet.create ({
     title: {
         fontFamily: 'BreeSerif-Regular',
         fontWeight: '500',
-        fontSize: hp(3.5),
+        fontSize: hp(3),
         color: '#fff'
     },
     slogan: {
@@ -96,13 +96,13 @@ const styles = StyleSheet.create ({
         color: '#757575'
     },
     card: {
-        width: wp(47.5),
+        width: wp(48),
         height: hp(35),
         backgroundColor: '#f6846b',
         flexDirection: "column",
         justifyContent: "space-between",
         marginVertical: hp(1),
-        marginHorizontal: hp(0.7),
+        marginHorizontal: hp(0.5),
         position: "relative",
         borderRadius: hp(1),
         overflow: "hidden",

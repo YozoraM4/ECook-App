@@ -17,3 +17,6 @@ export const REMOVE = 'REMOVE'
 // Profile
 export const ACCADD = 'ACCADD'
 export const ACCUPDATE = 'ACCUPDATE'
+
+// Search
+export const SEARCH = 'SEARCH'

@@ -28,13 +28,15 @@ const styles = StyleSheet.create ({
     },
     headline: {
         fontFamily: 'BreeSerif-Regular',
-        fontSize: hp(5),
+        fontSize: hp(4),
         fontWeight: "500",
+        paddingBottom: hp(2),
     },
     subline: {
         fontFamily: 'BreeSerif-Regular',
         fontSize: hp(2),
         fontWeight: '300',
+        marginBottom: hp(1)
     },
     nextBtn: {
         backgroundColor: '#fd7463',
