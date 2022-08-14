@@ -7,6 +7,8 @@ export default foods = [
       "style": 'traditional soup recipe',
       "serve": '4',
       "like": 452,
+      "isLike" :  false,
+      "isSave" : false,
       "ingredients": [
         "Squash",
         "Begetable Broth",
@@ -32,7 +34,9 @@ export default foods = [
       "style": 'Classic japanese recipe',
       "serve": '1',
       "like": 138,
-      "ingredients": [
+      "isLiked" :  false,
+      "isSaved" : false,
+       "ingredients": [
         "Usucha(thin matcha)",
         "Boiling Water",
       ],
@@ -54,7 +58,9 @@ export default foods = [
       "style": 'Classic japanese recipe',
       "serve": '1',
       "like": 953,
-      "ingredients": [
+      "isLiked" :  false,
+      "isSaved" : false,
+       "ingredients": [
         "onion",
         "potato",
         "carrot",
@@ -82,7 +88,9 @@ export default foods = [
       "style": 'European recipe',
       "serve": '1',
       "like": 346,
-      "ingredients": [
+      "isLiked" :  false,
+      "isSaved" : false,
+       "ingredients": [
         "salmon fillets",
         "olive oil",
         "onion",
@@ -107,7 +115,9 @@ export default foods = [
       "style": 'Chinese recipe',
       "serve": '2',
       "like": 875,
-      "ingredients": [
+      "isLiked" :  false,
+      "isSaved" : false,
+       "ingredients": [
         'Tofu',
         "Bell Pepper",
         "Onion",
@@ -133,7 +143,9 @@ export default foods = [
       "style": 'Cannellini Salad',
       "serve": '1',
       "like": 232,
-      "ingredients": [
+      "isLiked" :  false,
+      "isSaved" : false,
+       "ingredients": [
         "Capers",
         "Tuna",
         "Salt",
@@ -160,7 +172,9 @@ export default foods = [
       "style": 'fry potato',
       "serve": '2',
       "like": 953,
-      "ingredients": [
+      "isLiked" :  false,
+      "isSaved" : false,
+       "ingredients": [
         "garlic",
         "potato",
         "salt",
@@ -188,7 +202,9 @@ export default foods = [
       "style": 'Classic japanese recipe',
       "serve": '1',
       "like": 245,
-      "ingredients": [
+      "isLiked" :  false,
+      "isSaved" : false,
+       "ingredients": [
         "Noddle",
         "Shrimps",
         "Vegetable",

@@ -18,10 +18,11 @@ import Close from '@assets/icons/close';
 // Components
 import { AppContext } from '@context/context'
 import { UseLocal } from '../../hook';
+import { AppStorage } from '../../utils';
 
 const Component = (props) => {
   const local = UseLocal();
-  const {userInfo} = useContext(AppContext);
+  const {userInfo, getIsLike} = useContext(AppContext);
 
   const positions = useSharedValue(wp(-100));
   const animatedHeader = useAnimatedStyle(()=> {

@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react'
-import { View, Text, TouchableOpacity, Image, TextInput } from 'react-native'
+import { View, Text, TouchableOpacity, Image, TextInput, ToastAndroid } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux';
 import {launchImageLibrary} from 'react-native-image-picker';
 import {
@@ -46,6 +46,7 @@ const Edit = ({navigation}) => {
         }
         AppStorage.setItem('@user.data', JSON.stringify(updateData));
         dispatch(actionProfile.update(updateData));
+        ToastAndroid.show(local.successUpdate, ToastAndroid.SHORT);
         navigation.goBack();
     } 
   return (

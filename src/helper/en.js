@@ -12,7 +12,10 @@ export default {
 
   // Auth 
   login: 'Login',
+  loginSuccess: "Successfully Login",
   register: 'Register',
+  registerSuccess: "Successfully Register",
+  logout: 'Logout',
   name: 'Name',
   pwd: 'Password',
   language: 'Language',
@@ -26,6 +29,10 @@ export default {
   popular: "Popular Recipes",
   result: 'Recipe Found',
   nrecipe: 'No Recipe',
+  addSave: 'Saved Recipe',
+  rmSave: 'Removed Recipe',
+  addLike: 'Liked',
+  rmLike: 'Removed Like',
 
   // Shopping
   shopping: 'Shopping',
@@ -36,6 +43,8 @@ export default {
   unit: 'Unit',
   title: 'add an item name at Ingredient',
   titleu: 'add an amount of unit at Unit',
+  ingreAdd: 'Successfully added',
+  ingreRm: 'Removed from Shopping List',
 
   // Save
   nsRecipe: 'No Saved Recipes!',
@@ -51,5 +60,6 @@ export default {
   saved: 'Saved Recipes',
   updName: 'Update Name',
   updPwd: 'Update Password',
-  confirm: 'Confirm'
+  confirm: 'Confirm',
+  successUpdate: 'Successfully Updated'
 };

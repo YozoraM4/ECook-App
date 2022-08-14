@@ -1,5 +1,5 @@
 import React, {useState, useContext, useEffect} from 'react'
-import { View, Text } from 'react-native'
+import { View, ToastAndroid } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 
 // Style
@@ -7,7 +7,8 @@ import styles from '@components/profile/Style'
 
 // Context
 import { AppContext } from '@context/context';
-import { AppStorage } from '../../utils'
+import { AppStorage } from '../../utils';
+import { UseLocal } from '../../hook';
 
 // Components
 import Component from '@components/profile/Component'
@@ -17,6 +18,7 @@ import * as actionProfile from '../../store/actions/profile';
 const Profile = ({navigation}) => {
   const [showModal, setShowModal] = useState(false);
   const {lang, getLang, getAuth, userInfo, getUserInfo} = useContext(AppContext);
+  const local = UseLocal();
 
   const saveRecipes = useSelector(state=> state.SavedList.savedRecipes)
   const likedRecipes = useSelector(state => state.LikedList.likedRecipe)
@@ -39,6 +41,7 @@ const Profile = ({navigation}) => {
   const AuthHandler = ()=> {
     AppStorage.removeItem('@user.token');
     getAuth(false);
+    ToastAndroid.show(local.logout, ToastAndroid.SHORT);
   };
 
   const BasketHandler = ()=> {

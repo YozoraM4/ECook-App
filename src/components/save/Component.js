@@ -24,11 +24,6 @@ const Component = (props) => {
   const renderComponent = ({item}) => {
     return (
       <TouchableOpacity activeOpacity={0.8} style={styles.card} onPress={()=> props.goToDetail(item)}>
-        <View style={styles.actionBox}>
-          <TouchableOpacity onPress={()=> props.remove(item)} activeOpacity={0.8} style={styles.removeBtn}>
-            <Close width={hp(2)} height={hp(2)} colors='#fd7463' />
-          </TouchableOpacity>
-        </View>
         <Image source={{uri:item.image}} style={styles.food}/>
         <View style={styles.nameBox}>
           <Text style={styles.foodName}>{item.name}</Text>
@@ -56,8 +51,6 @@ const Component = (props) => {
       }
       {savedData.length > 0 ?
           <ScrollView style={{marginBottom: hp(2)}} >
-            
-
             <FlatList 
               showsVerticalScrollIndicator={false}
               data={savedData}

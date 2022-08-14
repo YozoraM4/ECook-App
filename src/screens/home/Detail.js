@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useContext} from 'react'
-import { View, Text, TouchableOpacity, Image, FlatList } from 'react-native'
+import { View, Text, TouchableOpacity, Image, ToastAndroid } from 'react-native'
 import { ScrollView } from 'react-native-virtualized-view';
 import {useDispatch, useSelector} from 'react-redux'
 import Animated,{useSharedValue, useAnimatedStyle, withTiming, Easing} from 'react-native-reanimated';
@@ -19,25 +19,55 @@ import HeartIcon from '@assets/icons/heart';
 import Sakura from '@assets/icons/sakura';
 
 // Components
-import { AppContext } from '../../context/context';
 import * as actionSave from '../../store/actions/save'
 import * as actionLike from '../../store/actions/like';
 import * as actionRecipe from '../../store/actions/recipe';
+import { UseLocal } from '../../hook';
 import foodList from '../../data/food';
 
 const Detail = ({route, navigation}) => {
   const {food} = route.params;
-  const {isSave, getIsSave, isLike, getIsLike} = useContext(AppContext);
-
+  const local = UseLocal();
   const dispatch = useDispatch();
+
   const save = (value) => {
+    let update = {
+      id: food.id,
+      name: food.name,
+      image: food.image,
+      duration: food.duration,
+      style: food.style,
+      serve: food.serve,
+      like: food.like,
+      isLike: food.isLike,
+      isSave: true,
+      ingredients: food.ingredients,
+      instructions: food.instructions,
+    }
+    dispatch(actionRecipe.update(update));
     dispatch(actionSave.add(value));
-    getIsSave(!isSave);
+    ToastAndroid.show(local.addSave, ToastAndroid.SHORT);
+    navigation.goBack()
   }
   
   const unSave = (value) => {
-    dispatch(actionSave.remove(value.id))
-    getIsSave(!isSave);
+    let update = {
+      id: food.id,
+      name: food.name,
+      image: food.image,
+      duration: food.duration,
+      style: food.style,
+      serve: food.serve,
+      like: food.like,
+      isLike: food.isLike,
+      isSave: false,
+      ingredients: food.ingredients,
+      instructions: food.instructions,
+    }
+    dispatch(actionRecipe.update(update));
+    dispatch(actionSave.remove(value.id));
+    ToastAndroid.show(local.rmSave, ToastAndroid.SHORT);
+    navigation.goBack()
   }
 
   const Like = (value) => {
@@ -49,12 +79,15 @@ const Detail = ({route, navigation}) => {
       style: food.style,
       serve: food.serve,
       like: food.like + 1,
+      isLike: true,
+      isSave: food.isSave,
       ingredients: food.ingredients,
       instructions: food.instructions,
     }
     dispatch(actionRecipe.update(update));
     dispatch(actionLike.like(value));
-    getIsLike(!isLike);
+    ToastAndroid.show(local.addLike, ToastAndroid.SHORT);
+    navigation.goBack()
   }
 
   const UnLike = (value) => {
@@ -66,12 +99,15 @@ const Detail = ({route, navigation}) => {
       style: food.style,
       serve: food.serve,
       like: food.like - 1,
+      isLike: false,
+      isSave: food.isSave,
       ingredients: food.ingredients,
       instructions: food.instructions,
     }
     dispatch(actionRecipe.update(update));
     dispatch(actionLike.unlike(value.id));
-    getIsLike(!isLike);
+    ToastAndroid.show(local.rmLike, ToastAndroid.SHORT);
+    navigation.goBack()
   }
 
   const positions = useSharedValue(hp(10));
@@ -100,7 +136,7 @@ const Detail = ({route, navigation}) => {
               />
           </TouchableOpacity>
           
-           {isSave ?
+           {food.isSave ?
               <TouchableOpacity onPress={()=> unSave(food)} style={styles.actionBtn} activeOpacity={0.8}>
                 <BookMarkIcon
                   width={hp(2.5)}
@@ -135,7 +171,7 @@ const Detail = ({route, navigation}) => {
                 <Text style={styles.subTitle}>{food.style}</Text>
               </View>
               
-              {isLike ?
+              {food.isLike ?
                 <TouchableOpacity activeOpacity={0.8} onPress={()=> UnLike(food)} style={styles.rowBetween}>
                   <View style={styles.flexRow}>
                     <HeartIcon

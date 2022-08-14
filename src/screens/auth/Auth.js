@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, ToastAndroid } from 'react-native'
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -11,10 +11,12 @@ import styles from '@components/auth/Style'
 // Components
 import { AppContext } from '@context/context'
 import { AppStorage } from '../../utils';
+import { UseLocal } from '../../hook';
 import LoginComponent from '@components/auth/login/Component';
 import RegisterComponent from '@components/auth/register/Component';
 
 const Login = ({navigation}) => {
+  const local = UseLocal();
   const [showBox, setShowBox] = useState(true);
   const [name, setName] = useState()
   const [password, setPassword] = useState()
@@ -32,7 +34,8 @@ const Login = ({navigation}) => {
         const format = JSON.parse(userData);
         if(format.name === name && format.password === password){
           getAuth(true);
-        AppStorage.setItem('@user.token', token);
+          AppStorage.setItem('@user.token', token);
+          ToastAndroid.show(local.loginSuccess, ToastAndroid.SHORT);
         }
       } else {
         getAuth(false)
@@ -53,6 +56,7 @@ const Login = ({navigation}) => {
       AppStorage.setItem('@user.data', JSON.stringify(userData));
       getUserInfo(userData);
       getAuth(true)
+      ToastAndroid.show(local.registerSuccess, ToastAndroid.SHORT);
     } catch (error) {
       console.log(error)
     }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View } from 'react-native'
+import { View, ToastAndroid } from 'react-native'
 import {useDispatch, useSelector} from 'react-redux';
 import {
   widthPercentageToDP as wp,
@@ -10,6 +10,7 @@ import {
 import styles from '@components/ingredient/Style'
 
 // Components
+import { UseLocal } from '../../hook';
 import Component from '@components/ingredient/Component';
 import IngredientModal from '../../modal/IngredientModal';
 import * as actionItem from '../../store/actions/ingredient'
@@ -19,6 +20,7 @@ const Ingredient = () => {
   const [item, setItem] = useState();
   const [unit, setUnit] = useState();
 
+  const local = UseLocal();
   const shoppingItems = useSelector(state=> state.ItemList.Items)
 
   const ModalHandler = () => {
@@ -38,12 +40,14 @@ const Ingredient = () => {
     }
     dispatch(actionItem.add(data));
     setModal(!modal);
+    ToastAndroid.show(local.ingreAdd, ToastAndroid.SHORT);
     setItem('');
     setUnit('')
   }
   
   const DeleteHandler = (value) => {
-    dispatch(actionItem.remove(value.id))
+    dispatch(actionItem.remove(value.id)),
+    ToastAndroid.show(local.ingreRm, ToastAndroid.SHORT);
   }
   return (
     <View style={styles.container}>

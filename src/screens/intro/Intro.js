@@ -37,13 +37,13 @@ const Intro = () => {
     AppStorage.setItem('@intro', into)
     setTimeout(()=> {  
       getIntro(false);
-    }, 500)
+    }, 900)
   }
   
   const NextHandler = () => {
     setTimeout(()=> {  
       setStep(false);  
-    }, 500)
+    }, 800)
   }
   
   return (
